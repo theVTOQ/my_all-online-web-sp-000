@@ -6,10 +6,11 @@ def my_all?(collection)
   while i < collection.length
     yielded_value = yield(collection[i])
     block_return_values << yielded_value
+    i += 1
     if !yielded_value
       return false
     end
-    i += 1
   end
   true
+  #if block_return_values.include?(false)
 end
